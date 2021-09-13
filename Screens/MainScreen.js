@@ -45,7 +45,7 @@ componentDidMount=async ()=>{
 }
 
 fetchMoreStories=async ()=>{
-  const query = await db.collection('Stories').startAfter(this.state.lastVisibleStory).limit(5).get()
+  const query = await db.collection('Stories').startAfter(this.state.lastVisibleStory).limit(2).get()
   query.docs.map((doc)=>{
     this.setState({
       allStories:[...this.state.allStories, doc.data()],
